@@ -2,7 +2,7 @@
 import { IUserDetails } from "@/components/types/Response";
 import axios from "axios";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import { FiUsers } from "react-icons/fi";
 import { BiGitRepoForked } from "react-icons/bi";
@@ -36,7 +36,12 @@ export default function Home() {
     setDetails({} as IUserDetails);
     getUserDetails(searchText);
   };
- 
+  const buttonRef: any = useRef(null);
+  const handleKeyPress = (event: any) => {
+    if (event.key === "Enter") {
+      buttonRef?.current?.click();
+    }
+  };
 
   return (
     <div className="w-full relative">
@@ -48,10 +53,12 @@ export default function Home() {
           id="search"
           className="px-3 py-1 rounded"
           value={searchText}
+          onKeyPress={handleKeyPress}
         />
         <button
           onClick={doSearch}
           className="flex justify-center items-center shadow-md shadow-sky-500"
+          ref={buttonRef}
         >
           <AiOutlineSearch className="text-sky-600 w-7 h-7 bg-gray-200 rounded " />
         </button>
