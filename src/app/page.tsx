@@ -137,7 +137,7 @@ export default function Home() {
                   {details?.bio}
                 </p>
                 {/* ============== followers and following ============= */}
-                <div className="flex justify-center items-center gap-2 flex-wrap mb-2">
+                <div className="flex justify-center items-center gap-2 mb-2">
                   <p className="font-light text-gray-200 text-sm tracking-wider text-center flex justify-center items-center gap-1">
                     <FiUsers />{" "}
                     <span className="text-sky-600 font-semibold">
@@ -159,7 +159,7 @@ export default function Home() {
                     <span className="text-sky-600 font-semibold">
                       {details?.public_repos}
                     </span>{" "}
-                    Public repo
+                     repo
                   </p>
                 </div>
               </div>
