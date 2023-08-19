@@ -27,7 +27,9 @@ export default function RootLayout({
           alignItems: "start",
           flexDirection: "column",
           minHeight: "100vh",
-          margin: "auto",
+          margin: "0px",
+          padding:"0px"
+
         }}
       >
         <Navbar />
