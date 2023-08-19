@@ -4,7 +4,7 @@ import axios from "axios";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
-import {HiOutlineFolderDownload} from 'react-icons/hi'
+import { HiOutlineFolderDownload } from "react-icons/hi";
 import { FiUsers } from "react-icons/fi";
 import { BiGitRepoForked } from "react-icons/bi";
 import GitHubCalendar from "react-github-calendar";
@@ -69,16 +69,20 @@ export default function Home() {
 
     // Convert the section to a canvas
 
-    html2canvas(section, { backgroundColor: "#090C14" , ignoreElements: (element) => element.classList.contains('ignore-me')}).then((canvas) => {
+    html2canvas(section, {
+      backgroundColor: "#090C14",
+      ignoreElements: (element) => element.classList.contains("ignore-me"),
+    }).then((canvas) => {
       // Convert canvas to a data URL
 
-      const imgUrl = canvas.toDataURL("image/jpeg");
+      const imgUrl = canvas.toDataURL("png");
 
       // Create an anchor element for downloading
       const a = document.createElement("a");
-      a.href = imgUrl;
-      a.download = "gitto-profile.jpg";
-      a.click();
+        a.href = imgUrl;
+        a.download = "gitto-profile.png";
+        a.click();
+      
     });
   };
   return (
@@ -159,7 +163,7 @@ export default function Home() {
                     <span className="text-sky-600 font-semibold">
                       {details?.public_repos}
                     </span>{" "}
-                     repo
+                    repo
                   </p>
                 </div>
               </div>
@@ -176,7 +180,13 @@ export default function Home() {
               </div>
             </div>
             <div className=" lg:w-[40%] w-11/12 flex justify-end items-center text-gray-400 mx-auto">
-              <button onClick={handleDownloadClick} className="gap-1 text-xs flex justify-end items-center"><HiOutlineFolderDownload className="w-5 h-5 text-sky-700"/>Save as image</button>
+              <button
+                onClick={handleDownloadClick}
+                className="gap-1 text-xs flex justify-end items-center"
+              >
+                <HiOutlineFolderDownload className="w-5 h-5 text-sky-700" />
+                Save as image
+              </button>
             </div>
           </div>
         ) : (
