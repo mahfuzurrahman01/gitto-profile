@@ -179,7 +179,7 @@ export default function Home() {
                 <GitHubCalendar username={details?.login} />
               </div>
             </div>
-            <div className=" lg:w-[40%] w-11/12 flex justify-end items-center text-gray-400 mx-auto">
+            <div className="lg:w-[40%] w-11/12 lg:flex hidden justify-end items-center text-gray-400 mx-auto">
               <button
                 onClick={handleDownloadClick}
                 className="gap-1 text-xs flex justify-end items-center"
