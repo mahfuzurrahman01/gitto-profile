@@ -171,7 +171,7 @@ export default function Home() {
                 Check on GitHub
               </a>
               {/* ============ for showing github calendar ===========  */}
-              <div className="mt-3 w-11/12 mx-auto">
+              <div className="mt-3 lg:w-11/12 w-full mx-auto">
                 <GitHubCalendar username={details?.login} />
               </div>
             </div>
