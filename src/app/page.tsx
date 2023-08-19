@@ -33,12 +33,10 @@ export default function Home() {
   };
   // after clicking on search button this function will work
   const doSearch = () => {
+    setDetails({} as IUserDetails);
     getUserDetails(searchText);
   };
-  // by default in first load this use effect will hit with the name of 'Mafuzurrahman01' and showing the result on UI
-  // useEffect(() => {
-  //   getUserDetails("mahfuzurrahman01");
-  // });
+ 
 
   return (
     <div className="w-full relative">
@@ -65,7 +63,7 @@ export default function Home() {
       </div>
       <div className="w-full justify-center items-center mt-5">
         {details?.name ? (
-          <div className="mb-4 relative bg-gray-900 bg-opacity-70 flex justify-center flex-col items-center text-gray-200 md:w-[40%] w-11/12 p-5 mx-auto rounded gap-3">
+          <div className="mb-4 relative bg-gray-900 bg-opacity-50 flex justify-center flex-col items-center text-gray-200 md:w-[40%] w-11/12 p-5 mx-auto rounded gap-3">
             {/* // three dot  */}
             <div className="flex justify-start gap-1 items-center absolute left-2 top-2">
               <div className="w-3 h-3 rounded-full bg-red-700"></div>
